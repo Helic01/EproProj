@@ -22,6 +22,10 @@ public class HistoricalDataEntry {
     public HistoricalDataEntry() {
     }
 
+    public HistoricalDataEntry(Double v, String c){
+        value = v;
+        comment = c;
+    }
     public Long getId() {
         return id;
     }
@@ -29,7 +33,6 @@ public class HistoricalDataEntry {
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getDate() {
         return date;
     }
@@ -54,11 +57,9 @@ public class HistoricalDataEntry {
         this.comment = comment;
     }
 
-    public KeyResult getKeyResult() {
-        return keyResult;
-    }
-
     public void setKeyResult(KeyResult keyResult) {
         this.keyResult = keyResult;
     }
+
+    public KeyResult getKeyResult(){ return keyResult;}
 }

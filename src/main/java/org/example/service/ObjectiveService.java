@@ -38,7 +38,7 @@ public class ObjectiveService {
         if (optionalObjective.isPresent()) {
             Objective existingObjective = optionalObjective.get();
             existingObjective.setName(newObjective.getName());
-            existingObjective.setCompany(newObjective.getCompany());
+            //existingObjective.setCompany(newObjective.getCompany());
             return objectiveRepository.save(existingObjective);
         } else {
             return null;

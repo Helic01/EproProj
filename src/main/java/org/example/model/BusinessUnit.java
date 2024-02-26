@@ -1,6 +1,7 @@
 package org.example.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,14 +22,18 @@ public class BusinessUnit {
     @OneToMany(mappedBy = "businessUnit", cascade = CascadeType.ALL)
     private List<Objective> objectives;
 
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    private List<Unit> units;
+
     public BusinessUnit() {
+        objectives = new ArrayList<Objective>();
     }
 
-    public BusinessUnit(String name, int size, Company company, List<Objective> objectives) {
+    public BusinessUnit(String name, int size, Company company) {
         this.name = name;
         this.size = size;
         this.company = company;
-        this.objectives = objectives;
+        objectives = new ArrayList<Objective>();
     }
 
     public Long getId() {
@@ -63,12 +68,22 @@ public class BusinessUnit {
         this.company = company;
     }
 
-    public List<Objective> getObjectives() {
-        return objectives;
+    public int getObjectiveCount() {return objectives.size();}
+
+    public Objective getObjectives(int number) {
+        return getObjectives(number);
     }
 
-    public void setObjectives(List<Objective> objectives) {
-        this.objectives = objectives;
+    public void setObjective(Objective objective) {
+        objectives.add(objective);
+    }
+
+    public List<Unit> getUnits() {
+        return units;
+    }
+
+    public void setUnits(List<Unit> units) {
+        this.units = units;
     }
 
     @Override

@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a23208ad-06e4-4d1a-9cae-a320bc9591d5" name="Changes" comment="Angefangen mit Requirements und noch etwas Struktur&#10;+Verbindung zwischen Objectives und KeyResults (3-5 Key pro Obj)&#10;+HistoricalDataEntries in KeyResults&#10;+createHistoricalDataEntries in KeyResultService (inlk. Kommentar)&#10;+Erweiterung der UpdateKeyResult Methode in KeyResultService">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/DashboardService.java" afterDir="false" />
+    <list default="true" id="a23208ad-06e4-4d1a-9cae-a320bc9591d5" name="Changes" comment="+Controller, Services and Repositories&#10;+Getter und Setter für Model Klassen">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Unit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/BusinessUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/BusinessUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/HistoricalDataEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/HistoricalDataEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/KeyResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/KeyResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Objective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Objective.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/KeyResultService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/KeyResultService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ObjectiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ObjectiveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/ObjectiveServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/ObjectiveServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
@@ -40,24 +49,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.MyTest.executor": "Run",
-    "JUnit.MyTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.ObjectiveServiceTest.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.ObjectiveServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.model.Main" />
@@ -152,22 +161,13 @@
       <option name="project" value="LOCAL" />
       <updated>1708952964640</updated>
     </task>
-    <task id="LOCAL-00004" summary="Angefangen mit Requirements und noch etwas Struktur&#10;+Verbindung zwischen Objectives und KeyResults (3-5 Key pro Obj)&#10;+HistoricalDataEntries in KeyResults&#10;+createHistoricalDataEntries in KeyResultService (inlk. Kommentar)&#10;+Erweiterung der UpdateKeyResult Methode in KeyResultService">
-      <option name="closed" value="true" />
-      <created>1708962441145</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1708962441145</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Spring-Boot impl" />
     <MESSAGE value="Basis Struktur definiert" />
     <MESSAGE value="+Controller, Services and Repositories&#10;+Getter und Setter für Model Klassen" />
-    <MESSAGE value="Angefangen mit Requirements und noch etwas Struktur&#10;+Verbindung zwischen Objectives und KeyResults (3-5 Key pro Obj)&#10;+HistoricalDataEntries in KeyResults&#10;+createHistoricalDataEntries in KeyResultService (inlk. Kommentar)&#10;+Erweiterung der UpdateKeyResult Methode in KeyResultService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Angefangen mit Requirements und noch etwas Struktur&#10;+Verbindung zwischen Objectives und KeyResults (3-5 Key pro Obj)&#10;+HistoricalDataEntries in KeyResults&#10;+createHistoricalDataEntries in KeyResultService (inlk. Kommentar)&#10;+Erweiterung der UpdateKeyResult Methode in KeyResultService" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Controller, Services and Repositories&#10;+Getter und Setter für Model Klassen" />
   </component>
 </project>

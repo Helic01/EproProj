@@ -38,8 +38,8 @@ public class KeyResultService {
             }
 
             existingKeyResult.setName(newKeyResult.getName());
-            existingKeyResult.setProgress(newKeyResult.getProgress());
-            existingKeyResult.setObjective(newKeyResult.getObjective());
+            //existingKeyResult.setProgress(newKeyResult.getProgress());
+            //existingKeyResult.setObjective(newKeyResult.getObjective());
 
             return keyResultRepository.save(existingKeyResult);
         } else {
@@ -55,7 +55,7 @@ public class KeyResultService {
             historicalDataEntry.setDate(String.valueOf(LocalDateTime.now()));
             historicalDataEntry.setValue(existingKeyResult.getProgress());
             historicalDataEntry.setComment(comment);
-            historicalDataEntry.setKeyResult(existingKeyResult);
+            //historicalDataEntry.setKeyResult(existingKeyResult);
             historicalDataEntries.add(historicalDataEntry);
         }
 

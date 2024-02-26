@@ -1,6 +1,9 @@
 package org.example.model;
 
+import org.springframework.data.util.Pair;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,15 +15,12 @@ public class KeyResult {
 
     private String name;
 
-    private double progress;
+    private double progress=0.0;
 
-    private double current;
+    private double current=0.0;
 
-    private double goal;
+    private double goal=0.1;
 
-    @ManyToOne
-    @JoinColumn(name = "objective_id")
-    private Objective objective;
 
     @OneToMany(mappedBy = "keyResult", cascade = CascadeType.ALL)
     private List<HistoricalDataEntry> historicalData;
@@ -28,10 +28,15 @@ public class KeyResult {
     public KeyResult() {
     }
 
-    public KeyResult(String name, double progress, Objective objective) {
+    public KeyResult(String name, double current, double goal) {
         this.name = name;
-        this.progress = progress;
-        this.objective = objective;
+        this.current = current;
+        this.goal = goal;
+        historicalData = new ArrayList<HistoricalDataEntry>();
+        if(goal<=0.0){
+            goal=1.0;
+        }
+        progress = current/goal;
     }
 
     // Getters and setters
@@ -56,25 +61,22 @@ public class KeyResult {
         return progress;
     }
 
-    public void setProgress(double progress) {
-        this.progress = progress;
-    }
 
     public double getCurrent() { return current; }
 
-    public void setCurrent(double current) { this.current = current; }
+    public void setCurrent(double current, String comment) {
+        this.current = current;
+        historicalData.add(new HistoricalDataEntry(current, comment));
+        if(goal!=0)
+            progress = current/goal;
+    }
 
     public double getGoal() { return goal; }
 
-    public void setGoal(double goal) { this.goal = goal; }
-
-    public Objective getObjective() {
-        return objective;
+    public void setGoal(double goal) {
+            this.goal = goal;
     }
 
-    public void setObjective(Objective objective) {
-        this.objective = objective;
-    }
 
     public List<HistoricalDataEntry> getHistoricalData() {
         return historicalData;

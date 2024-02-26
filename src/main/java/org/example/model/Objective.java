@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Objective {
+public class Objective { //OKR-SET
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,9 +12,10 @@ public class Objective {
 
     private String name;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
+    private BusinessUnit businessUnit;*/
 
     @OneToMany(mappedBy = "objective", cascade = CascadeType.ALL)
     private List<KeyResult> keyResults;
@@ -40,6 +41,7 @@ public class Objective {
         this.name = name;
     }
 
+    /*
     public Company getCompany() {
         return company;
     }
@@ -47,6 +49,14 @@ public class Objective {
     public void setCompany(Company company) {
         this.company = company;
     }
+
+    public BusinessUnit getBusinessUnit() {
+        return businessUnit;
+    }
+
+    public void setBusinessUnit(BusinessUnit businessUnit) {
+        this.businessUnit = businessUnit;
+    }*/
 
     public List<KeyResult> getKeyResults() {
         return keyResults;
