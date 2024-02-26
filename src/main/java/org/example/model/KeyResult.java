@@ -14,6 +14,10 @@ public class KeyResult {
 
     private double progress;
 
+    private double current;
+
+    private double goal;
+
     @ManyToOne
     @JoinColumn(name = "objective_id")
     private Objective objective;
@@ -55,6 +59,14 @@ public class KeyResult {
     public void setProgress(double progress) {
         this.progress = progress;
     }
+
+    public double getCurrent() { return current; }
+
+    public void setCurrent(double current) { this.current = current; }
+
+    public double getGoal() { return goal; }
+
+    public void setGoal(double goal) { this.goal = goal; }
 
     public Objective getObjective() {
         return objective;

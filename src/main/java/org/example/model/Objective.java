@@ -12,8 +12,6 @@ public class Objective {
 
     private String name;
 
-    private double progress;
-
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
@@ -40,14 +38,6 @@ public class Objective {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public double getProgress() {
-        return progress;
-    }
-
-    public void setProgress(double progress) {
-        this.progress = progress;
     }
 
     public Company getCompany() {

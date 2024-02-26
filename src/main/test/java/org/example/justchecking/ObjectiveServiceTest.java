@@ -29,7 +29,6 @@ public class ObjectiveServiceTest {
         Objective mockObjective = new Objective();
         mockObjective.setId(1L);
         mockObjective.setName("Test Objective");
-        mockObjective.setProgress(0.5);
         // Mock the behavior of the ObjectiveRepository
         when(objectiveRepository.findById(1L)).thenReturn(java.util.Optional.of(mockObjective));
         // Test the getObjectById method

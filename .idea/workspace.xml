@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a23208ad-06e4-4d1a-9cae-a320bc9591d5" name="Changes" comment="+Controller, Services and Repositories&#10;+Getter und Setter für Model Klassen">
+    <list default="true" id="a23208ad-06e4-4d1a-9cae-a320bc9591d5" name="Changes" comment="Angefangen mit Requirements und noch etwas Struktur&#10;+Verbindung zwischen Objectives und KeyResults (3-5 Key pro Obj)&#10;+HistoricalDataEntries in KeyResults&#10;+createHistoricalDataEntries in KeyResultService (inlk. Kommentar)&#10;+Erweiterung der UpdateKeyResult Methode in KeyResultService">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/DashboardService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/KeyResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/KeyResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ObjectiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ObjectiveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/HistoricalDataEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/HistoricalDataEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/KeyResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/KeyResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Objective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Objective.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/KeyResultService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/KeyResultService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ObjectiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ObjectiveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/ObjectiveServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/ObjectiveServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,13 +152,22 @@
       <option name="project" value="LOCAL" />
       <updated>1708952964640</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Angefangen mit Requirements und noch etwas Struktur&#10;+Verbindung zwischen Objectives und KeyResults (3-5 Key pro Obj)&#10;+HistoricalDataEntries in KeyResults&#10;+createHistoricalDataEntries in KeyResultService (inlk. Kommentar)&#10;+Erweiterung der UpdateKeyResult Methode in KeyResultService">
+      <option name="closed" value="true" />
+      <created>1708962441145</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708962441145</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Spring-Boot impl" />
     <MESSAGE value="Basis Struktur definiert" />
     <MESSAGE value="+Controller, Services and Repositories&#10;+Getter und Setter für Model Klassen" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Controller, Services and Repositories&#10;+Getter und Setter für Model Klassen" />
+    <MESSAGE value="Angefangen mit Requirements und noch etwas Struktur&#10;+Verbindung zwischen Objectives und KeyResults (3-5 Key pro Obj)&#10;+HistoricalDataEntries in KeyResults&#10;+createHistoricalDataEntries in KeyResultService (inlk. Kommentar)&#10;+Erweiterung der UpdateKeyResult Methode in KeyResultService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Angefangen mit Requirements und noch etwas Struktur&#10;+Verbindung zwischen Objectives und KeyResults (3-5 Key pro Obj)&#10;+HistoricalDataEntries in KeyResults&#10;+createHistoricalDataEntries in KeyResultService (inlk. Kommentar)&#10;+Erweiterung der UpdateKeyResult Methode in KeyResultService" />
   </component>
 </project>
