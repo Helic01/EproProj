@@ -13,6 +13,8 @@ public class HistoricalDataEntry {
 
     private double value;
 
+    private String comment;
+
     @ManyToOne
     @JoinColumn(name = "key_result_id")
     private KeyResult keyResult;
@@ -42,6 +44,14 @@ public class HistoricalDataEntry {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String value) {
+        this.comment = comment;
     }
 
     public KeyResult getKeyResult() {

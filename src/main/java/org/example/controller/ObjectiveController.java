@@ -19,16 +19,16 @@ public class ObjectiveController {
 
     @PostMapping
     public Objective createObjective(@RequestBody Objective objective) {
-        return objectiveService.createObject(objective);
+        return objectiveService.createObjective(objective);
     }
 
     @PutMapping("/{id}")
     public Objective updateObjective(@PathVariable Long id, @RequestBody Objective objective) {
-        return objectiveService.updateObject(id, objective);
+        return objectiveService.updateObjective(id, objective);
     }
 
     @DeleteMapping("/{id}")
     public void deleteObjective(@PathVariable Long id) {
-        objectiveService.deleteObject(id);
+        objectiveService.deleteObjective(id);
     }
 }

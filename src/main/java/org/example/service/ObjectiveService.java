@@ -23,11 +23,17 @@ public class ObjectiveService {
         return objectiveOptional.orElse(null);
     }
 
-    public Objective createObject(Objective objective) {
+    public Objective createObjective(Objective objective) {
+        if (objective.getKeyResults().size() < 3) {
+            throw new IllegalArgumentException("Objectives must have at least three Key Results.");
+        }
+        if (objective.getKeyResults().size() > 5) {
+            throw new IllegalArgumentException("Objectives can only have up to five Key Results.");
+        }
         return objectiveRepository.save(objective);
     }
 
-    public Objective updateObject(Long id, Objective newObjective) {
+    public Objective updateObjective(Long id, Objective newObjective) {
         Optional<Objective> optionalObjective = objectiveRepository.findById(id);
         if (optionalObjective.isPresent()) {
             Objective existingObjective = optionalObjective.get();
@@ -40,7 +46,7 @@ public class ObjectiveService {
         }
     }
 
-    public void deleteObject(Long id) {
+    public void deleteObjective(Long id) {
         objectiveRepository.deleteById(id);
     }
 }

@@ -2,6 +2,7 @@ package org.example.controller;
 
 import org.example.model.KeyResult;
 import org.example.service.KeyResultService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,8 +44,8 @@ public class KeyResultController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<KeyResult> updateKeyResult(@PathVariable Long id, @RequestBody KeyResult keyResult) {
-        KeyResult updatedKeyResult = keyResultService.updateKeyResult(id, keyResult);
+    public ResponseEntity<KeyResult> updateKeyResult(@PathVariable Long id, @RequestBody KeyResult keyResult, @RequestParam String comment) {
+        KeyResult updatedKeyResult = keyResultService.updateKeyResult(id, keyResult, comment);
         if (updatedKeyResult != null) {
             return ResponseEntity.ok(updatedKeyResult);
         } else {

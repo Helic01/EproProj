@@ -1,6 +1,7 @@
 package org.example.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Objective {
@@ -17,7 +18,8 @@ public class Objective {
     @JoinColumn(name = "company_id")
     private Company company;
 
-    // Constructors, getters, and setters
+    @OneToMany(mappedBy = "objective", cascade = CascadeType.ALL)
+    private List<KeyResult> keyResults;
 
     // Constructor
     public Objective() {
@@ -55,4 +57,13 @@ public class Objective {
     public void setCompany(Company company) {
         this.company = company;
     }
+
+    public List<KeyResult> getKeyResults() {
+        return keyResults;
+    }
+
+    public void setKeyResults(List<KeyResult> keyResults) {
+        this.keyResults = keyResults;
+    }
+
 }
