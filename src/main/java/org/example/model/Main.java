@@ -1,18 +1,16 @@
-package org.example;
+package org.example.model;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class Main {
-    @RequestMapping("/")
-    String home() {
-        return "Hello World!";
-    }
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
 }
