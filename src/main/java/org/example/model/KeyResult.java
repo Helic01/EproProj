@@ -11,16 +11,13 @@ public class KeyResult {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
+    private Long id;
     private String name;
 
     private double progress=0.0;
-
     private double current=0.0;
-
     private double goal=0.1;
-
     private double confidenceLevel;
 
     private Objective buObjective;
