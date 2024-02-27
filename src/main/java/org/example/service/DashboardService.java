@@ -35,5 +35,16 @@ public class DashboardService {
         return totalPercentage/keyResults.size(); //man sollte nie durch 0 teilen können, wenn du aber angst hast kannst du hier nochmal was dran machen
     }
 
+    public void printKeyResultObjective(@NotNull Objective objective){
+        List<KeyResult> keyResults = objective.getKeyResults();
+        double totalPercentage = 0.0;
+        for (KeyResult keyResult : keyResults) {
+            totalPercentage += keyResult.getProgress();
+        }
+        System.out.println("Total Progress of Objective "+objective.getName()+": "+totalPercentage);
+        for (KeyResult keyResult : keyResults) {
+            System.out.println("     Progress for KeyResult: " + keyResult.getName() + " is at " + keyResult.getProgress() + "%.");
+        }
+    }
 
 }

@@ -21,6 +21,7 @@ public class KeyResult {
 
     private double goal=0.1;
 
+    private double confidenceLevel;
 
     @OneToMany(mappedBy = "keyResult", cascade = CascadeType.ALL)
     private List<HistoricalDataEntry> historicalData;
@@ -85,4 +86,13 @@ public class KeyResult {
     public void setHistoricalData(List<HistoricalDataEntry> historicalData) {
         this.historicalData = historicalData;
     }
+
+    public double getConfidenceLevel() {
+        return confidenceLevel;
+    }
+
+    public void setConfidenceLevel(double confidenceLevel) {
+        this.confidenceLevel = confidenceLevel;
+    }
+
 }
