@@ -23,6 +23,8 @@ public class KeyResult {
 
     private double confidenceLevel;
 
+    private Objective buObjective;
+
     @OneToMany(mappedBy = "keyResult", cascade = CascadeType.ALL)
     private List<HistoricalDataEntry> historicalData;
 
@@ -76,6 +78,14 @@ public class KeyResult {
 
     public void setGoal(double goal) {
             this.goal = goal;
+    }
+
+    public void setBUObjective(Objective buObjective){
+        this.buObjective=buObjective;
+    }
+
+    public Objective getBuObjective(){
+        return buObjective;
     }
 
 

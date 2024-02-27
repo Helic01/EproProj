@@ -1,6 +1,11 @@
 package org.example.model;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -15,6 +20,8 @@ public class User {
     private String password;
 
     @ElementCollection
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "role")
     private List<String> roles;
 
     public User() {
@@ -57,6 +64,15 @@ public class User {
     public void setRoles(List<String> roles) {
         this.roles = roles;
     }
+
+    public Collection<GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        for (String role : roles) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + role)); // Rollenpräfix "ROLE_" hinzufügen
+        }
+        return authorities;
+    }
+
 
     @Override
     public String toString() {
