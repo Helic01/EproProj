@@ -23,8 +23,13 @@ public class HistoricalDataEntry {
     }
 
     public HistoricalDataEntry(Double v, String c){
-        value = v;
-        comment = c;
+        if(!c.equals("")){
+            value = v;
+            comment = c;
+        }
+        else{
+            System.out.println("Comment cannot be empty");
+        }
     }
 
     public Long getId() {

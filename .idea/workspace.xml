@@ -4,8 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a23208ad-06e4-4d1a-9cae-a320bc9591d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    <list default="true" id="a23208ad-06e4-4d1a-9cae-a320bc9591d5" name="Changes" comment="Tests and more&#10;+Added several Tests&#10;+Dashboard Controller">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/BusinessUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/CompanyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/HistoricalDataEntryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/KeyResultTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/RoleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/UnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/BusinessUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/BusinessUnitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/HistoricalDataEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/HistoricalDataEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/KeyResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/KeyResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/HistoricalDataEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/HistoricalDataEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/ObjectiveServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/org/example/justchecking/ObjectiveServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,46 +61,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MyTest.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JUnit.MyTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.ObjectiveServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Verzweiflung&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MyTest.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.MyTest.executor": "Run",
+    "JUnit.justchecking in EproProj.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.BusinessUnitTest.t0.executor": "Run",
+    "TestNG.BusinessUnitTest.t1.executor": "Run",
+    "TestNG.BusinessUnitTest.t2.executor": "Run",
+    "TestNG.BusinessUnitTest.t3.executor": "Run",
+    "TestNG.BusinessUnitTest.toStringTest.executor": "Run",
+    "TestNG.CompanyTest.toStringTest.executor": "Run",
+    "TestNG.HistoricalDataEntryTest.testNoComment.executor": "Run",
+    "TestNG.KeyResultTest.testNoComment.executor": "Run",
+    "TestNG.ObjectiveServiceTest.executor": "Run",
+    "TestNG.ObjectiveServiceTest.testGetObjectById.executor": "Run",
+    "TestNG.RoleTest.toStringTest.executor": "Run",
+    "TestNG.UnitTest.toStringTest.executor": "Run",
+    "TestNG.UserTest.printTest.executor": "Run",
+    "TestNG.testClass.t1.executor": "Run",
+    "TestNG.testClass.t3.executor": "Run",
+    "git-widget-placeholder": "Verzweiflung",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.example" />
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.justchecking" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+  <component name="RunManager" selected="TestNG.UnitTest.toStringTest">
+    <configuration name="justchecking in EproProj" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EproProj" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/main/test/java/org/example/justchecking" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BusinessUnitTest.toStringTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EproProj" />
       <extension name="coverage">
         <pattern>
@@ -92,13 +122,16 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.justchecking" />
-      <option name="MAIN_CLASS_NAME" value="org.example.justchecking.MyTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="org.example.justchecking.BusinessUnitTest" />
+      <option name="METHOD_NAME" value="toStringTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ObjectiveServiceTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CompanyTest.toStringTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EproProj" />
       <extension name="coverage">
         <pattern>
@@ -107,8 +140,45 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.justchecking" />
-      <option name="MAIN_CLASS_NAME" value="org.example.justchecking.ObjectiveServiceTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="org.example.justchecking.CompanyTest" />
+      <option name="METHOD_NAME" value="toStringTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleTest.toStringTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EproProj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.justchecking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.justchecking" />
+      <option name="MAIN_CLASS_NAME" value="org.example.justchecking.RoleTest" />
+      <option name="METHOD_NAME" value="toStringTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnitTest.toStringTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EproProj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.justchecking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.justchecking" />
+      <option name="MAIN_CLASS_NAME" value="org.example.justchecking.UnitTest" />
+      <option name="METHOD_NAME" value="toStringTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -117,9 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="TestNG.ObjectiveServiceTest" />
-        <item itemvalue="JUnit.MyTest" />
+        <item itemvalue="TestNG.UnitTest.toStringTest" />
+        <item itemvalue="TestNG.RoleTest.toStringTest" />
+        <item itemvalue="JUnit.justchecking in EproProj" />
+        <item itemvalue="TestNG.CompanyTest.toStringTest" />
+        <item itemvalue="TestNG.BusinessUnitTest.toStringTest" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709078700017</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cleanup&#10;+to String Methods&#10;+comments&#10;handled some edge cases">
+      <option name="closed" value="true" />
+      <created>1709078780697</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709078780697</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

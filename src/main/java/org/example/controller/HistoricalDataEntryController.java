@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/historical-data-entries")
+@RequestMapping("/historical-data-entries")
 public class HistoricalDataEntryController {
 
     private final HistoricalDataEntryService historicalDataEntryService;

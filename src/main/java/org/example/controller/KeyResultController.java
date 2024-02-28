@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/key-results")
+@RequestMapping("/key-results")
 public class KeyResultController {
 
     private final KeyResultService keyResultService;

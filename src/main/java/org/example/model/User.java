@@ -22,12 +22,12 @@ public class User {
     @ElementCollection
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
-    private List<String> roles;
+    private List<Role> roles;
 
     public User() {
     }
 
-    public User(String username, String password, List<String> roles) {
+    public User(String username, String password, List<Role> roles) {
         this.username = username;
         this.password = password;
         this.roles = roles;
@@ -54,20 +54,23 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if(!password.equals(""))
+            this.password = password;
+        else
+            System.out.println("password cannot be empty");
     }
 
-    public List<String> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<String> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 
     public Collection<GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        for (String role : roles) {
+        for (Role role : roles) {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + role)); // Rollenpräfix "ROLE_" hinzufügen
         }
         return authorities;
