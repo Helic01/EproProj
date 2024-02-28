@@ -1,6 +1,8 @@
 package org.example.model;
 
 import javax.persistence.*;
+import java.security.Key;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,6 +24,12 @@ public class Objective { //OKR-SET
 
     // Constructor
     public Objective() {
+        keyResults = new ArrayList<KeyResult>();
+    }
+
+    public Objective(String name) {
+        keyResults = new ArrayList<KeyResult>();
+        this.name=name;
     }
 
     // Getters and setters
@@ -62,8 +70,21 @@ public class Objective { //OKR-SET
         return keyResults;
     }
 
+    public void addKeyResult(KeyResult keyResult){ //adds a single KeyResult
+        keyResults.add(keyResult);
+    }
+
     public void setKeyResults(List<KeyResult> keyResults) {
         this.keyResults = keyResults;
+    } //set s alist with all KeyResults of this Objective, should be used with caution
+
+    @Override
+    public String toString() { //prints the data of this Objective
+        return "BusinessUnit{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", Number of KeyResults=" + keyResults.size() +
+                '}';
     }
 
 }

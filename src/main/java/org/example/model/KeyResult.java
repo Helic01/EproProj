@@ -15,7 +15,7 @@ public class KeyResult {
     private Long id;
     private String name;
 
-    private double progress=0.0;
+    private double progress=0.0; //in percent
     private double current=0.0;
     private double goal=0.1;
     private double confidenceLevel;
@@ -35,6 +35,7 @@ public class KeyResult {
         historicalData = new ArrayList<HistoricalDataEntry>();
         if(goal<=0.0){
             goal=1.0;
+            System.out.println("Goal cant be 0 or lower. Goal set to 1.0");
         }
         progress = current/goal;
     }
@@ -59,38 +60,50 @@ public class KeyResult {
 
     public double getProgress() {
         return progress;
-    }
-
+    } //returns the progress in percent
 
     public double getCurrent() { return current; }
 
-    public void setCurrent(double current, String comment) {
-        this.current = current;
-        historicalData.add(new HistoricalDataEntry(current, comment));
-        if(goal!=0)
-            progress = current/goal;
+    public void setCurrent(double current, String comment) { //sets the current Progress, and adds it into the historical Data with a required comment, updates progress
+        if(comment.equals("")){
+            System.out.println("Error, Comment cant be empty");
+        }
+        else{
+            this.current = current;
+            historicalData.add(new HistoricalDataEntry(current, comment));
+            if(goal!=0.0)
+                progress = current/goal;
+        }
+
     }
 
     public double getGoal() { return goal; }
 
     public void setGoal(double goal) {
+        if(goal>0.0)
             this.goal = goal;
+        else
+            System.out.println("Goal cannot be 0 or lower.");
     }
 
-    public void setBUObjective(Objective buObjective){
+    public void setBUObjective(Objective buObjective){ //sets Parent Objective
         this.buObjective=buObjective;
     }
 
-    public Objective getBuObjective(){
+    public Objective getBuObjective(){ //returns Parent Objective
         return buObjective;
     }
 
 
-    public List<HistoricalDataEntry> getHistoricalData() {
+    public List<HistoricalDataEntry> getHistoricalData() { //returns a List with the whole history of this KeyResult
         return historicalData;
     }
 
-    public void setHistoricalData(List<HistoricalDataEntry> historicalData) {
+    public void addHistoricalDataEntry(String comment){ //adds an HistoricalDataEntry without changing the current Progress of this KeyResult
+        historicalData.add(new HistoricalDataEntry(current,comment));
+    }
+
+    public void setHistoricalData(List<HistoricalDataEntry> historicalData) {//sets the whole history, should be used with caution
         this.historicalData = historicalData;
     }
 

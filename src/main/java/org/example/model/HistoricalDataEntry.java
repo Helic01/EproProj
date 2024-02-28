@@ -9,7 +9,7 @@ public class HistoricalDataEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String date;
+    private String date = "";
 
     private double value;
 
@@ -26,6 +26,7 @@ public class HistoricalDataEntry {
         value = v;
         comment = c;
     }
+
     public Long getId() {
         return id;
     }
@@ -33,6 +34,7 @@ public class HistoricalDataEntry {
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getDate() {
         return date;
     }
@@ -53,13 +55,26 @@ public class HistoricalDataEntry {
         return comment;
     }
 
-    public void setComment(String value) {
-        this.comment = comment;
+    public void setComment(String comment) { //only sets Comment if not empty
+        if(comment.equals(""))
+            System.out.println("Comment cannot be empty");
+        else
+            this.comment = comment;
     }
 
     public void setKeyResult(KeyResult keyResult) {
         this.keyResult = keyResult;
-    }
+    } //sets the KeyResult this entry belongs to
 
     public KeyResult getKeyResult(){ return keyResult;}
+
+    @Override
+    public String toString() { //prints the data of this HistoricalDataEntry
+        return "BusinessUnit{" +
+                "id=" + id +
+                ", value='" + value + '\'' +
+                ", comment=" + comment +
+                ", date=" + date +
+                '}';
+    }
 }

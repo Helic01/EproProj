@@ -13,11 +13,11 @@ public class BusinessUnit {
 
     private String name;
 
-    private int size;
+    private int size; //Employee count
 
     @ManyToOne
     @JoinColumn(name = "company_id")
-    private Company company;
+    private Company company; //parent company
 
     @OneToMany(mappedBy = "businessUnit", cascade = CascadeType.ALL)
     private List<Objective> objectives;
@@ -70,24 +70,30 @@ public class BusinessUnit {
 
     public int getObjectiveCount() {return objectives.size();}
 
-    public Objective getObjectives(int number) {
-        return getObjectives(number);
-    }
+    public Objective getObjective(int number) {
+        return objectives.get(number);
+    } //returns a single Objective
 
-    public void setObjective(Objective objective) {
+    public void addObjective(Objective objective){
         objectives.add(objective);
     }
 
+    public List<Objective> getObjectiveList(){return objectives;}  //returns a list with all Objectives
+
     public List<Unit> getUnits() {
         return units;
+    } //returns a list with all Sub-Units
+
+    public void addUnit(Unit unit){
+        units.add(unit);
     }
 
     public void setUnits(List<Unit> units) {
         this.units = units;
-    }
+    } //Sets a list with all Sub-Units, should be used with caution
 
     @Override
-    public String toString() {
+    public String toString() { //prints the data of this BusinessUnit
         return "BusinessUnit{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
